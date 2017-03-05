@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Lafz</string>
+
+    <string name="preQ1">Does the patient have any of the following problems? If yes, then select them.</string>
+    <string name="preQ2">Are the following tests done? If done recently then input those values or else do the tests on the spot.</string>
+    <string name="preQ3">Sonography done or not?</string>
+
+    <string name="kws_caption">To start demonstration say \"oh mighty computer\".</string>
+    <string name="menu_caption">Say \"digits\", \"forecast\" or \"phones\" to choose the grammar, language model or phonetic decoder example.</string>
+    <string name="digits_caption">You can say any of these words \"the quick brown fox jumped over the lazy dog sound test\"</string>
+    <string name="forecast_caption">To try recognition of a weather forecast like \"sunny spells on Wednesday\".</string>
+    <string name="phone_caption">To try phonetic recognition say anything.</string>
+    <string name="choose_format_title">Choose Audio Format</string>
+    <string name="start_recording">Record</string>
+    <string name="stop_recording">Stop</string>
+    <string name="audio_format">Format</string>
+
+</resources>

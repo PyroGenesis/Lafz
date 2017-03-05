@@ -1,0 +1,465 @@
+Language model created by QuickLM on Sat Jan 21 22:49:27 EST 2017
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 16 sentences and 105 words
+
+\data\
+ngram 1=105
+ngram 2=168
+ngram three=169
+
+\1-grams:
+-2.6128 three -0.3000
+-1.4087 </s> -0.3010
+-1.4087 <s> -0.2657
+-2.0107 a -0.2957
+-2.3118 actually -0.2826
+-2.6128 ago -0.2837
+-2.3118 am -0.2989
+-2.3118 and -0.2946
+-2.6128 anti -0.3000
+-2.6128 appear -0.2925
+-2.6128 appetite -0.3000
+-2.3118 are -0.2978
+-2.6128 at -0.3000
+-2.6128 baby -0.3000
+-2.6128 be -0.3000
+-2.6128 because -0.2968
+-2.1357 been -0.2978
+-2.6128 being -0.2989
+-2.6128 but -0.2957
+-2.6128 can -0.3000
+-2.6128 child -0.3000
+-2.6128 come -0.2925
+-2.6128 conducted -0.2968
+-2.6128 consumption -0.3000
+-2.6128 currently -0.2837
+-2.6128 days -0.2837
+-2.6128 dizziness -0.2837
+-2.6128 dizzy -0.2989
+-2.1357 do -0.2826
+-2.6128 eating -0.3000
+-2.3118 feel -0.2815
+-2.6128 feeling -0.3000
+-2.6128 fine -0.3000
+-2.6128 for -0.2968
+-2.6128 form -0.3000
+-2.6128 forward -0.2989
+-2.6128 from -0.2968
+-2.6128 going -0.2925
+-2.3118 good -0.2826
+-2.6128 hand -0.2837
+-1.7677 have -0.2782
+-2.6128 hello -0.2957
+-2.3118 HIV -0.2989
+-2.6128 how -0.2978
+-1.9138 i -0.2881
+-2.6128 important -0.3000
+-2.6128 in -0.2968
+-2.6128 injection -0.3000
+-2.3118 into -0.2957
+-2.3118 is -0.2978
+-2.6128 issue -0.3000
+-2.0107 it -0.2793
+-2.6128 leading -0.2925
+-2.6128 lets -0.3000
+-2.3118 look -0.2989
+-2.6128 lot -0.2989
+-2.3118 low -0.2989
+-2.3118 may -0.2978
+-2.6128 month -0.3000
+-2.6128 more -0.3000
+-2.6128 move -0.3000
+-2.6128 next -0.3000
+-2.3118 no -0.2936
+-2.6128 not -0.2989
+-2.3118 now -0.2957
+-2.1357 ok -0.2936
+-2.6128 only -0.3000
+-2.3118 positive -0.2815
+-2.6128 pregnancy -0.2837
+-2.6128 prevent -0.2946
+-2.6128 properly -0.2837
+-2.6128 recently -0.2957
+-2.6128 remedy -0.2968
+-2.6128 reports -0.2936
+-2.6128 retrovial -0.3000
+-2.6128 see -0.2968
+-2.3118 sir -0.2826
+-2.3118 so -0.2903
+-2.6128 sonography -0.2837
+-2.6128 soon -0.2989
+-2.6128 starting -0.2989
+-2.6128 suffering -0.3000
+-2.3118 sugar -0.2989
+-2.6128 taken -0.2946
+-2.6128 tetanus -0.3000
+-2.0107 that -0.2870
+-1.8346 the -0.2946
+-2.6128 third -0.3000
+-2.6128 though -0.2968
+-2.6128 thought -0.2968
+-2.6128 through -0.2989
+-1.7097 to -0.2859
+-2.6128 treatment -0.2968
+-2.6128 trying -0.2925
+-2.6128 value -0.2989
+-2.3118 want -0.2925
+-2.6128 we -0.2936
+-2.6128 week -0.2837
+-2.6128 weeks -0.3000
+-2.3118 with -0.2946
+-2.6128 would -0.3000
+-2.1357 yes -0.2936
+-2.6128 yet -0.2837
+-1.6585 you -0.2815
+-2.0107 your -0.2968
+
+\2-grams:
+-0.3010 three weeks 0.0000
+-1.0280 <s> have -0.1549
+-1.5051 <s> hello 0.0000
+-1.5051 <s> i -0.2553
+-1.2041 <s> no 0.0000
+-1.0280 <s> ok 0.0000
+-1.5051 <s> so -0.1761
+-1.0280 <s> yes 0.0000
+-1.2041 <s> you -0.2218
+-0.9031 a days 0.0000
+-0.9031 a lot 0.0000
+-0.9031 a low -0.1761
+-0.9031 a sonography 0.0000
+-0.6021 actually </s> -0.3010
+-0.6021 actually recently 0.0000
+-0.3010 ago </s> -0.3010
+-0.6021 am going 0.0000
+-0.6021 am trying 0.0000
+-0.6021 and that -0.2430
+-0.6021 and want 0.0000
+-0.3010 anti retrovial 0.0000
+-0.3010 appear to -0.2730
+-0.3010 appetite but 0.0000
+-0.6021 are HIV 0.0000
+-0.6021 are in 0.0000
+-0.3010 at hand 0.0000
+-0.3010 baby though 0.0000
+-0.3010 be fine 0.0000
+-0.3010 because your -0.1761
+-0.7782 been eating 0.0000
+-0.7782 been feeling 0.0000
+-0.7782 been suffering 0.0000
+-0.3010 being HIV 0.0000
+-0.3010 but i -0.2041
+-0.3010 can see 0.0000
+-0.3010 child form 0.0000
+-0.3010 come to -0.2430
+-0.3010 conducted a -0.2430
+-0.3010 consumption because 0.0000
+-0.3010 currently </s> -0.3010
+-0.3010 days </s> -0.3010
+-0.3010 dizziness </s> -0.3010
+-0.3010 dizzy now -0.1761
+-0.7782 do it -0.2430
+-0.7782 do that -0.2430
+-0.7782 do you -0.2762
+-0.3010 eating properly 0.0000
+-0.6021 feel </s> -0.3010
+-0.6021 feel good -0.1761
+-0.3010 feeling dizzy 0.0000
+-0.3010 fine currently 0.0000
+-0.3010 for your -0.2430
+-0.3010 form being 0.0000
+-0.3010 forward with 0.0000
+-0.3010 from a -0.2430
+-0.3010 going to -0.2730
+-0.6021 good </s> -0.3010
+-0.6021 good for 0.0000
+-0.3010 hand </s> -0.3010
+-1.1461 have been -0.2218
+-1.1461 have thought 0.0000
+-1.1461 have to -0.2430
+-0.5441 have you -0.1919
+-0.3010 hello i -0.2553
+-0.3010 HIV positive 0.0000
+-0.3010 how do -0.2218
+-0.6990 i am 0.0000
+-1.0000 i can 0.0000
+-1.0000 i feel -0.1761
+-1.0000 i have -0.2688
+-0.3010 important issue 0.0000
+-0.3010 in your -0.2430
+-0.3010 injection yet 0.0000
+-0.6021 into anti 0.0000
+-0.6021 into your -0.1761
+-0.6021 is low -0.1761
+-0.6021 is not 0.0000
+-0.3010 issue at 0.0000
+-0.9031 it </s> -0.3010
+-0.9031 it may -0.1761
+-0.9031 it next 0.0000
+-0.9031 it through 0.0000
+-0.3010 leading to -0.2430
+-0.3010 lets come 0.0000
+-0.3010 look into 0.0000
+-0.3010 lot actually -0.1761
+-0.6021 low appetite 0.0000
+-0.6021 low leading 0.0000
+-0.6021 may appear 0.0000
+-0.6021 may want 0.0000
+-0.3010 month how 0.0000
+-0.3010 more important 0.0000
+-0.3010 move forward 0.0000
+-0.3010 next week 0.0000
+-0.6021 no actually -0.1761
+-0.6021 no i -0.2041
+-0.3010 not good -0.1761
+-0.6021 now a -0.2430
+-0.6021 now lets 0.0000
+-0.7782 ok do -0.2218
+-0.7782 ok sir -0.1761
+-0.7782 ok so -0.1761
+-0.3010 only three 0.0000
+-0.6021 positive </s> -0.3010
+-0.6021 positive and -0.1761
+-0.3010 pregnancy </s> -0.3010
+-0.3010 prevent the -0.2632
+-0.3010 properly </s> -0.3010
+-0.3010 recently i -0.2553
+-0.3010 remedy it -0.2430
+-0.3010 reports have -0.1549
+-0.3010 retrovial treatment 0.0000
+-0.3010 see that -0.2430
+-0.6021 sir </s> -0.3010
+-0.6021 sir we 0.0000
+-0.6021 so starting 0.0000
+-0.6021 so you -0.2762
+-0.3010 sonography </s> -0.3010
+-0.3010 soon now -0.1761
+-0.3010 starting with 0.0000
+-0.3010 suffering from 0.0000
+-0.6021 sugar consumption 0.0000
+-0.6021 sugar value 0.0000
+-0.3010 taken the -0.2632
+-0.3010 tetanus injection 0.0000
+-0.9031 that is -0.1761
+-0.9031 that soon 0.0000
+-0.9031 that would 0.0000
+-0.9031 that you -0.2499
+-1.0792 the child 0.0000
+-1.0792 the dizziness 0.0000
+-1.0792 the more 0.0000
+-1.0792 the pregnancy 0.0000
+-1.0792 the reports 0.0000
+-1.0792 the tetanus 0.0000
+-0.3010 third month 0.0000
+-0.3010 though it -0.2430
+-0.3010 thought it -0.2430
+-0.3010 through and -0.1761
+-1.2041 to be 0.0000
+-1.2041 to do -0.2218
+-0.9031 to look 0.0000
+-1.2041 to move 0.0000
+-1.2041 to remedy 0.0000
+-0.9031 to the -0.2218
+-0.3010 treatment that -0.2430
+-0.3010 trying to -0.2730
+-0.3010 value is -0.1761
+-0.3010 want to -0.2109
+-0.3010 we have -0.2688
+-0.3010 week </s> -0.3010
+-0.3010 weeks ago 0.0000
+-0.3010 with the -0.2218
+-0.3010 would prevent 0.0000
+-0.7782 yes a -0.2430
+-0.7782 yes only 0.0000
+-0.7782 yes sir -0.1761
+-0.3010 yet </s> -0.3010
+-0.9542 you are 0.0000
+-0.9542 you been -0.1249
+-1.2553 you conducted 0.0000
+-1.2553 you feel -0.1761
+-1.2553 you have -0.2688
+-1.2553 you may -0.1761
+-1.2553 you taken 0.0000
+-0.9031 your baby 0.0000
+-0.6021 your sugar 0.0000
+-0.9031 your third 0.0000
+
+\three-grams:
+-0.3010 three weeks ago
+-0.3010 <s> have you
+-0.3010 <s> hello i
+-0.3010 <s> i feel
+-0.6021 <s> no actually
+-0.6021 <s> no i
+-0.7782 <s> ok do
+-0.7782 <s> ok sir
+-0.7782 <s> ok so
+-0.3010 <s> so starting
+-0.7782 <s> yes a
+-0.7782 <s> yes only
+-0.7782 <s> yes sir
+-0.6021 <s> you are
+-0.6021 <s> you may
+-0.3010 a days </s>
+-0.3010 a lot actually
+-0.3010 a low appetite
+-0.3010 a sonography </s>
+-0.3010 actually recently i
+-0.3010 am going to
+-0.3010 am trying to
+-0.3010 and that is
+-0.3010 and want to
+-0.3010 anti retrovial treatment
+-0.3010 appear to be
+-0.3010 appetite but i
+-0.3010 are HIV positive
+-0.3010 are in your
+-0.3010 at hand </s>
+-0.3010 baby though it
+-0.3010 be fine currently
+-0.3010 because your sugar
+-0.3010 been eating properly
+-0.3010 been feeling dizzy
+-0.3010 been suffering from
+-0.3010 being HIV positive
+-0.3010 but i am
+-0.3010 can see that
+-0.3010 child form being
+-0.3010 come to the
+-0.3010 conducted a sonography
+-0.3010 consumption because your
+-0.3010 dizzy now a
+-0.3010 do it next
+-0.3010 do that soon
+-0.3010 do you feel
+-0.3010 eating properly </s>
+-0.3010 feel good </s>
+-0.3010 feeling dizzy now
+-0.3010 fine currently </s>
+-0.3010 for your baby
+-0.3010 form being HIV
+-0.3010 forward with the
+-0.3010 from a low
+-0.3010 going to do
+-0.3010 good for your
+-0.3010 have been suffering
+-0.3010 have thought it
+-0.3010 have to look
+-0.6021 have you been
+-0.9031 have you conducted
+-0.9031 have you taken
+-0.3010 hello i can
+-0.6021 HIV positive </s>
+-0.6021 HIV positive and
+-0.3010 how do you
+-0.6021 i am going
+-0.6021 i am trying
+-0.3010 i can see
+-0.3010 i feel good
+-0.3010 i have been
+-0.3010 important issue at
+-0.3010 in your third
+-0.3010 injection yet </s>
+-0.3010 into anti retrovial
+-0.3010 into your sugar
+-0.3010 is low leading
+-0.3010 is not good
+-0.3010 issue at hand
+-0.3010 it may appear
+-0.3010 it next week
+-0.3010 it through and
+-0.3010 leading to the
+-0.3010 lets come to
+-0.6021 look into anti
+-0.6021 look into your
+-0.3010 lot actually </s>
+-0.3010 low appetite but
+-0.3010 low leading to
+-0.3010 may appear to
+-0.3010 may want to
+-0.3010 month how do
+-0.3010 more important issue
+-0.3010 move forward with
+-0.3010 next week </s>
+-0.3010 no actually recently
+-0.3010 no i am
+-0.3010 not good for
+-0.3010 now a days
+-0.3010 now lets come
+-0.3010 ok do that
+-0.3010 ok sir </s>
+-0.3010 ok so you
+-0.3010 only three weeks
+-0.3010 positive and that
+-0.3010 prevent the child
+-0.3010 recently i have
+-0.3010 remedy it </s>
+-0.3010 reports have you
+-0.3010 retrovial treatment that
+-0.3010 see that you
+-0.3010 sir we have
+-0.3010 so starting with
+-0.3010 so you have
+-0.3010 soon now lets
+-0.3010 starting with the
+-0.3010 suffering from a
+-0.3010 sugar consumption because
+-0.3010 sugar value is
+-0.3010 taken the tetanus
+-0.3010 tetanus injection yet
+-0.3010 that is not
+-0.3010 that soon now
+-0.3010 that would prevent
+-0.3010 that you are
+-0.3010 the child form
+-0.3010 the dizziness </s>
+-0.3010 the more important
+-0.3010 the pregnancy </s>
+-0.3010 the reports have
+-0.3010 the tetanus injection
+-0.3010 third month how
+-0.3010 though it may
+-0.3010 thought it through
+-0.3010 through and want
+-0.3010 to be fine
+-0.3010 to do it
+-0.3010 to look into
+-0.3010 to move forward
+-0.3010 to remedy it
+-0.6021 to the dizziness
+-0.6021 to the more
+-0.3010 treatment that would
+-0.3010 trying to remedy
+-0.3010 value is low
+-0.6021 want to look
+-0.6021 want to move
+-0.3010 we have thought
+-0.3010 weeks ago </s>
+-0.6021 with the pregnancy
+-0.6021 with the reports
+-0.3010 would prevent the
+-0.3010 yes a lot
+-0.3010 yes only three
+-0.3010 yes sir we
+-0.6021 you are HIV
+-0.6021 you are in
+-0.6021 you been eating
+-0.6021 you been feeling
+-0.3010 you conducted a
+-0.3010 you feel </s>
+-0.3010 you have to
+-0.3010 you may want
+-0.3010 you taken the
+-0.3010 your baby though
+-0.6021 your sugar consumption
+-0.6021 your sugar value
+-0.3010 your third month
+
+\end\

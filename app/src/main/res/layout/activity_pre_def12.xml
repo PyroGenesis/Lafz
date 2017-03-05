@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pre_def12"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/grad"
+    tools:context="com.example.burhanuddin.lafz.PreDef12">
+
+    <TextView
+        android:text=" Sonography done or not? (In the 1st and 3rd months)."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView7" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:id="@+id/GRPname"
+        android:layout_below="@+id/q1"
+        android:layout_marginTop="5dp"
+        android:ems="5"
+        android:textSize="12sp"
+        android:layout_height="33dp"
+        android:layout_toLeftOf="@+id/live" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:id="@+id/GRPdisp"
+        android:layout_below="@+id/q1"
+        android:layout_toRightOf="@+id/GRPname"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:ems="5"
+        android:textSize="15sp"
+        android:layout_height="33dp"
+        android:gravity="center_vertical"/>
+
+    <Button
+        android:text="View data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/view1"
+        android:layout_above="@+id/store"
+        android:textColor="#000000"
+        android:background="@drawable/icon"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:text="Main Menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/backToMain"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000"
+        android:background="@drawable/icon"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:text="Store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/backToMain"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:background="@drawable/icon"
+        android:id="@+id/store" />
+
+    <Button
+        android:text="Live Chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/live"
+        android:textColor="#000000"
+        android:background="@drawable/icon"
+        android:layout_alignParentRight="true" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:id="@+id/q1"
+        android:checkedButton="@+id/no"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:text="Yes"
+            android:layout_width="81dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:id="@+id/yes" />
+
+        <RadioButton
+            android:text="No"
+            android:layout_width="82dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/no" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/bldGrpLabel"
+        android:layout_height="33dp"
+        android:textSize="15sp"
+        android:layout_width="339dp"
+        android:gravity="center_vertical"
+        android:text="Blood Group"
+        android:layout_below="@+id/q1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.burhanuddin.lafz">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/iconblue"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.example.burhanuddin.lafz.Homepage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.burhanuddin.lafz.ConfigHome"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.example.burhanuddin.lafz.PreDef11" />
+        <activity android:name="com.example.burhanuddin.lafz.PreDef12" />
+        <activity android:name="com.example.burhanuddin.lafz.PreDef21" />
+        <activity android:name="com.example.burhanuddin.lafz.PreDef22" />
+        <activity android:name="com.example.burhanuddin.lafz.PreDef23" />
+        <activity android:name="com.example.burhanuddin.lafz.PreDef31" />
+        <activity android:name="com.example.burhanuddin.lafz.PreDef32" />
+        <activity
+            android:name="com.example.burhanuddin.lafz.ViewData1"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.example.burhanuddin.lafz.ViewData2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.example.burhanuddin.lafz.ViewData3"
+            android:screenOrientation="landscape" />
+        <activity android:name="com.example.burhanuddin.lafz.FileToText" />
+        <activity android:name="com.example.burhanuddin.lafz.RecordWav" />
+        <activity android:name="com.example.burhanuddin.lafz.CommentsToDB"></activity>
+    </application>
+
+</manifest>

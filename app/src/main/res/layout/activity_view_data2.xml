@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_view_data2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/grad"
+    tools:context="com.example.burhanuddin.lafz.ViewData2">
+
+
+    <TextView
+        android:text="pid\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/pid2"
+        />
+
+    <TextView
+        android:text="nau\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/vomit2"
+        android:layout_toEndOf="@+id/vomit2"
+        android:layout_marginLeft="4dp"
+        android:id="@+id/nausea2" />
+
+    <TextView
+        android:text="dizzi\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/appe2"
+        android:layout_toEndOf="@+id/appe2"
+        android:layout_marginLeft="4dp"
+        android:id="@+id/dizzi2" />
+
+    <TextView
+        android:text="appe\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/appe2"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/nausea2"
+        android:layout_toEndOf="@+id/nausea2"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="haemo\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/haemo2"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/dizzi2"
+        android:layout_toEndOf="@+id/dizzi2"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="vom\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/vomit2"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/pid2"
+        android:layout_toEndOf="@+id/pid2"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="sug\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/haemo2"
+        android:layout_toEndOf="@+id/haemo2"
+        android:id="@+id/sgr2"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="sono\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/sgr2"
+        android:layout_toEndOf="@+id/sgr2"
+        android:id="@+id/sono2"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="abn\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/sono2"
+        android:layout_toEndOf="@+id/sono2"
+        android:id="@+id/abn2"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="bp\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/fre2"
+        android:layout_toEndOf="@+id/fre2"
+        android:id="@+id/bp2"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="fre\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/abn2"
+        android:layout_toEndOf="@+id/abn2"
+        android:id="@+id/fre2"
+        android:layout_marginLeft="4dp"/>
+</RelativeLayout>

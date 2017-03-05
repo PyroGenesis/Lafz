@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_config_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/grad"
+    tools:context="com.example.burhanuddin.lafz.ConfigHome">
+
+    <TextView
+        android:text="Patient Details:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/detailsLabel"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="24sp"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:text="Patient ID:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detailsLabel"
+        android:id="@+id/IDLabel"
+        android:textSize="18sp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="15dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_marginTop="5dp"
+        android:id="@+id/pid"
+        android:layout_below="@+id/IDLabel"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="50dp" />
+
+    <RadioGroup
+        android:id="@+id/ptype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/pid"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp">
+
+        <RadioButton
+            android:text="New"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/newrb"
+            android:layout_weight="1"
+            android:checked="true" />
+
+        <RadioButton
+            android:text="Old"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/oldrb"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <TextView
+        android:text="Select Trimester:"
+        android:id="@+id/trimLabel"
+        android:layout_below="@+id/ptype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trimLabel"
+        android:id="@+id/trimsel"
+        android:orientation="horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp">
+
+        <RadioButton
+            android:text="First"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/first"
+            android:layout_weight="1"
+            android:checked="true" />
+
+        <RadioButton
+            android:text="Second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/sec"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:text="Third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/third"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <Button
+        android:text="Predefined Questions"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:id="@+id/predef"
+        android:layout_below="@+id/trimsel"
+        android:layout_alignEnd="@+id/detailsLabel"
+        android:textColor="#000000"
+        android:background="@drawable/icon"
+        android:layout_marginTop="48dp"
+        android:layout_alignRight="@+id/detailsLabel" />
+
+    <Button
+        android:text="Live chat"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/liv"
+        android:layout_alignTop="@+id/predef"
+        android:layout_alignEnd="@+id/ptype"
+        android:textColor="#000000"
+        android:background="@drawable/icon"
+        android:layout_alignRight="@+id/ptype" />
+
+    <Button
+        android:text="Logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        style="?android:attr/borderlessButtonStyle"
+        android:id="@+id/logout" />
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+#JSGF V1.0;
+
+grammar gr;
+
+<comment> = <problem> | <values> | <sono> | <bgr> | <hiv> | <freq> | <haemo>;
+<problem> = (VOMITING | LOW APPETITE | NAUSEA | DIZZINESS | PAIN | BLEEDING | ABNORMALITIES) (PRESENT | NOT PRESENT);
+<digits> = (ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT | NINE | ZERO)+;
+<values> = (BLOOD SUGAR | BLOOD PRESSURE) <digits>;
+<haemo> = (HAEMOGLOBIN) <digits>+ [POINT] <digits>*;
+<sono> = (SONOGRAPHY [NOT] DONE);
+<bgr> = (BLOOD GROUP) (Ap | Am | Bp | Bm | Op | Om | ABp | ABm);
+<hiv> = (HIV) (POSITIVE | NEGATIVE);
+<freq> = (FREQUENCY OF FETUS MOVEMENT) (TWOTOTHREE | THREETOFOUR | FOURTOFIVE) (TIMES);
+
+public <gr> = <comment>+;

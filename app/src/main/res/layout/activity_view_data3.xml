@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_view_data3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/grad"
+    tools:context="com.example.burhanuddin.lafz.ViewData3">
+
+    <TextView
+        android:text="pid\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/pid3" />
+
+    <TextView
+        android:text="pain\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/pid3"
+        android:layout_toEndOf="@+id/pid3"
+        android:id="@+id/pain3"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="bleed\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/pain3"
+        android:layout_toEndOf="@+id/pain3"
+        android:layout_marginStart="10dp"
+        android:id="@+id/ble3"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="haemo\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/ble3"
+        android:layout_toEndOf="@+id/ble3"
+        android:id="@+id/haemo3"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="sono\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/sug3"
+        android:layout_toEndOf="@+id/sug3"
+        android:id="@+id/sono3"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="sug\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sug3"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/haemo3"
+        android:layout_toEndOf="@+id/haemo3"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="abn\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/sono3"
+        android:layout_toEndOf="@+id/sono3"
+        android:id="@+id/abn3"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:text="pre\n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/abn3"
+        android:layout_toEndOf="@+id/abn3"
+        android:id="@+id/bp3"
+        android:layout_marginLeft="4dp"/>
+</RelativeLayout>
