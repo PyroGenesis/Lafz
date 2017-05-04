@@ -42,6 +42,7 @@ public class RecordWav extends AppCompatActivity {
     Button toFile, goToMain, eng, hin;
     int pid,trim,ans,lang=1;
     String type;
+    boolean recorded;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,9 @@ public class RecordWav extends AppCompatActivity {
         hin.setBackgroundColor(Color.TRANSPARENT);
         setButtonHandlers();
         enableButtons(false);
+
+        type="Session";
+        recorded = false;
 
         Bundle extras = getIntent().getExtras();
         if(extras!=null) {
@@ -82,12 +86,17 @@ public class RecordWav extends AppCompatActivity {
         toFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(RecordWav.this, FileToText.class);
-                in.putExtra("pid",pid);
-                in.putExtra("trim",trim);
-                in.putExtra("type",type);
-                in.putExtra("lang",lang);
-                startActivity(in);
+                if(recorded)
+                {
+                    Intent in = new Intent(RecordWav.this, FileToText.class);
+                    in.putExtra("pid",pid);
+                    in.putExtra("trim",trim);
+                    in.putExtra("type",type);
+                    in.putExtra("lang",lang);
+                    startActivity(in);
+                }
+                else
+                    Toast.makeText(RecordWav.this, "Please record voice before converting", Toast.LENGTH_LONG).show();
             }
         });
         eng.setOnClickListener(new View.OnClickListener()
@@ -337,6 +346,7 @@ public class RecordWav extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Start Recording", Toast.LENGTH_LONG).show();
 
                     enableButtons(true);
+                    recorded = true;
                     startRecording();
 
                     break;
