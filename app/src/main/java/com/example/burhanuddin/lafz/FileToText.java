@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ActionMenuView;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -76,7 +79,6 @@ public class FileToText extends AppCompatActivity implements RecognitionListener
         }
         ((TextView) findViewById(R.id.caption_text)).setText("Preparing the recognizer");
 
-
         String sampleAudio = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/Lafz/P"+pid+"T"+trim+type+".wav";
         FileInputStream stream = null;
         try {
@@ -91,7 +93,26 @@ public class FileToText extends AppCompatActivity implements RecognitionListener
         convertToSpeechNew convert = new convertToSpeechNew();
         convert.execute(stream);
         ((TextView) findViewById(R.id.caption_text)).setText("Recognition started\nPlease wait, this may take some time...");
-
+        //Below code is to test scrollable height
+//        int height = 780; //your textview height
+//        ((TextView)findViewById(R.id.caption_text)).getLayoutParams().height = height;
+//        ((TextView)findViewById(R.id.caption_text)).setMovementMethod(new ScrollingMovementMethod());
+//        ((TextView) findViewById(R.id.caption_text)).setText("\"hello i can see that you are in your third month how do you feel\\n\" +\n" +
+//                "//                \"i feel good\\n\" +\n" +
+//                "//                \"so starting with the reports.... have you been feeling dizzy now a days?\\n\" +\n" +
+//                "//                \"yes a lot actually  \\n\" +\n" +
+//                "//                \"have you been eating properly\\n\" +\n" +
+//                "//                \"no actually recently i have been suffering from a low appetite but i am trying to remedy it\\n\" +\n" +
+//                "//                \"you may want to look into your sugar consumption because your sugar value is low leading to the dizziness\\n\" +\n" +
+//                "//                \"ok sir\\n\" +\n" +
+//                "//                \"have you conducted a sonography\\n\" +\n" +
+//                "//                \"yes only three weeks ago\\n\" +\n" +
+//                "//                \"have you taken the tetanus injection yet\\n\" +\n" +
+//                "//                \"no i am going to do it next week\\n\" +\n" +
+//                "//                \"ok do that soon now lets come to the more important issue at hand\\n\" +\n" +
+//                "//                \"you are hiv positive and that is not good for your baby though it may appear to be fine currently\\n\" +\n" +
+//                "//                \"yes sir we have thought it through and want to move forward with the pregnancy \\n\" +\n" +
+//                "//                \"ok so you have to look into anti retrovial treatment that would prevent the child form being hiv positive\"");
 
 
         b2.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +150,41 @@ public class FileToText extends AppCompatActivity implements RecognitionListener
                 ((TextView) findViewById(R.id.caption_text)).setText("");
                 String output = generateSummary(indata);
                 ((TextView) findViewById(R.id.caption_text)).setText("SUMMARY\n" + output);
+
+                File folder = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/Lafz/summary");
+                if (!folder.exists()) {
+                    folder.mkdir();
+                }
+                File root= Environment.getExternalStorageDirectory();
+                File logFile = new File(root.getAbsolutePath()+"/Lafz/summary/P"+ pid+type+".txt");
+
+
+
+                if (!logFile.exists())
+                {
+                    try
+                    {
+                        logFile.createNewFile();
+                    }
+                    catch (IOException e)
+                    {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+                try
+                {
+                    //BufferedWriter for performance, true to set append to file flag
+                    BufferedWriter buf = new BufferedWriter(new FileWriter(logFile, true));
+                    buf.append(output);
+                    buf.newLine();
+                    buf.close();
+                }
+                catch (IOException e)
+                {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -268,6 +324,9 @@ public class FileToText extends AppCompatActivity implements RecognitionListener
             result = result.replaceAll("\\[SPEECH\\] ","");
             result = result.replaceAll("\\[NOISE\\] ","");
             result = result.replaceAll("\\(NULL\\) ","");
+            int height = 780; //your textview height
+            ((TextView)findViewById(R.id.caption_text)).getLayoutParams().height = height;
+            ((TextView)findViewById(R.id.caption_text)).setMovementMethod(new ScrollingMovementMethod());
             ((TextView) findViewById(R.id.caption_text)).setText("Recognition complete\nResult: " + result);
 
             PassText=result;
