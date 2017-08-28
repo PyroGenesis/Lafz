@@ -388,6 +388,21 @@ public class FileToText extends AppCompatActivity implements RecognitionListener
                     output = output + "Low appetite: Yes\n";
                     appe = "yes";
                 }
+                if (words[i].equals("sugar"))
+                {
+                    int j=1;
+                    while(j<6 && !(words[i+j].equals("low") || words[i+j].equals("normal")))
+                    {
+                        if((i+j)==words.length)
+                            break;
+                        j++;
+                    }
+                    Toast.makeText(getApplicationContext(), words[i+j], Toast.LENGTH_SHORT).show();
+                    if(words[i+j].equals("low"))
+                    {
+                        output = output + "Sugar level: Low\n";
+                    }
+                }
                 if (words[i].equals("sonography"))
                 {
                     if (words[i+1].equals("yes"))

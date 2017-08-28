@@ -56,10 +56,10 @@ public class RecordWav extends AppCompatActivity {
         typ=(RadioGroup)findViewById(R.id.ty);
         eng = (Button)findViewById(R.id.eng);
         eng.setVisibility(View.VISIBLE);
-        eng.setBackgroundColor(Color.TRANSPARENT);
+        //eng.setBackgroundColor(Color.TRANSPARENT);
         hin = (Button)findViewById(R.id.hin);
         hin.setVisibility(View.VISIBLE);
-        hin.setBackgroundColor(Color.TRANSPARENT);
+        //hin.setBackgroundColor(Color.TRANSPARENT);
         setButtonHandlers();
         enableButtons(false);
 
@@ -104,6 +104,8 @@ public class RecordWav extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+                eng.setBackgroundColor(Color.CYAN);
+                hin.setBackgroundResource(android.R.drawable.btn_default);
                 lang=1;
             }
         });
@@ -112,6 +114,8 @@ public class RecordWav extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+                hin.setBackgroundColor(Color.CYAN);
+                eng.setBackgroundResource(android.R.drawable.btn_default);
                 lang=2;
             }
         });
