@@ -4,7 +4,7 @@ A simple voice to text transcription solution
 **Lafz uses the [CMU PocketSphinx](https://cmusphinx.github.io/) (CMUPS) libraries to transcribe recorded voice into text. This is still a draft application nowhere near the level of daily usage**
 
 ### Functional Modules
-* __Login system:__ Very simple register and login system which only uses SQLite for now.
+* __Login system:__ Very simple register and login system which only uses server auth.
 * __ID Generation:__ Basic ID generation system based on the login ID
 * __Live Chat system:__ The main functionality of the app which uses CMUPS
   1. __Session:__ Uses CMUPS to transcribe live conversation using a Dictionary, LM file and PTM Acoustic Model
