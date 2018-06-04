@@ -3,6 +3,7 @@
 
 # Custom
 /app/src/main/assets/sync/*
+!/app/src/main/assets/sync/assets.lst
 
 # Built application files
 *.apk
