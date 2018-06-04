@@ -2,7 +2,7 @@
 # Covers files to be ignored for android development using Android Studio.
 
 # Custom
-/app/src/main/assets/sync/
+/app/src/main/assets/sync/*
 
 # Built application files
 *.apk
