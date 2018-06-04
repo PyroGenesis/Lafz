@@ -8,6 +8,16 @@ en-us-comm2/noisedict
 en-us-comm2/sendump
 en-us-comm2/transition_matrices
 en-us-comm2/variances
+en-us-comm3/README
+en-us-comm3/feat.params
+en-us-comm3/mdef
+en-us-comm3/mdef.txt
+en-us-comm3/means
+en-us-comm3/mixture_weights
+en-us-comm3/noisedict
+en-us-comm3/sendump
+en-us-comm3/transition_matrices
+en-us-comm3/variances
 en-us-eng2/README
 en-us-eng2/feat.params
 en-us-eng2/mdef

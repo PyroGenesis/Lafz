@@ -1,5 +1,6 @@
 package com.example.burhanuddin.lafz;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,15 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class PreDef12 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -167,6 +177,8 @@ public class PreDef12 extends AppCompatActivity implements AdapterView.OnItemSel
                     }
                     tdb.deleteEntry1(pid);
                     tdb.createEntry1(pid,vomit, nausea, appe, dizzi, haemo, hivv, bsgr, bgr, sono, bpr);
+                    sendTrim1Data(getApplicationContext(), String.valueOf(pid),vomit, nausea, appe, dizzi, String.valueOf(haemo), hivv, String.valueOf(bsgr), bgr, sono, String.valueOf(bpr));
+
                 } catch (Exception e) {
                     didItWork = false;
                     Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -234,6 +246,43 @@ public class PreDef12 extends AppCompatActivity implements AdapterView.OnItemSel
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    public void sendTrim1Data(final Context c, final String pid, final String vomit, final String  nausea, final String  appe, final String dizzi, final String haemo, final String hivv, final String bsgr, final String bgr, final String sono, final String bpr) {
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLs.URL_SEND_TRIM1_INFO,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(c, response, Toast.LENGTH_SHORT).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(c, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("pID", pid );
+                params.put("vomiting", vomit);
+                params.put("LowAppetite", appe);
+                params.put("nausea", nausea);
+                params.put("dizziness", dizzi);
+                params.put("haemoglobin", haemo);
+                params.put("hiv", hivv);
+                params.put("bloodSugar", bsgr);
+                params.put("bloodPressure", bpr);
+                params.put("sonography", sono);
+                params.put("bloodGroup",  bgr);
+                return params;
+            }
+        };
+
+
+        VolleySingleton.getInstance(c).addToRequestQueue(stringRequest);
     }
 
 }

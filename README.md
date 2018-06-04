@@ -15,7 +15,7 @@ A simple voice to text transcription solution
 All audio files, transcriptions, and summarizations are stored in the Lafz folder in Internal Memory
 
 ### Team members:  
-Burhanuddin Mustafa Lakdawala *(Team Leader)* @SierraNebula  
+Burhanuddin Mustafa Lakdawala *(Team Leader)* @PyroGenesis  
 Yash Tomar @TheNovaCore  
 Rahul Gupta @guptarahul18  
 Farhan Khan  

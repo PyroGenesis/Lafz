@@ -42,7 +42,7 @@
         android:background="@drawable/icon"
         android:layout_marginRight="10dp" />
 
-    <Button
+    <!--<Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
@@ -54,7 +54,7 @@
         android:layout_marginLeft="10dp"
         android:textColor="#000000"
         android:background="@drawable/icon"
-        android:enabled="false" />
+        android:enabled="false" /> -->
 
     <EditText
         android:layout_width="fill_parent"
@@ -81,4 +81,23 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="13dp" />
 
+    <EditText
+        android:id="@+id/ServerIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Server IP"
+        android:inputType="textPersonName"
+        android:text="192.168.0.106"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
 </RelativeLayout>

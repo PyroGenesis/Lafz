@@ -91,7 +91,26 @@ public class TrimesterDBHandler extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {}
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
+    {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME1);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME2);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME3);
+        onCreate(db);
+    }
+
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion)
+    {
+        onUpgrade(db, oldVersion, newVersion);
+    }
+
+    public void truncateAllTrims()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM "+ TABLE_NAME1);
+        db.execSQL("DELETE FROM "+ TABLE_NAME2);
+        db.execSQL("DELETE FROM "+ TABLE_NAME3);
+    }
 
     public void createEntry1(int pid,String vom, String nau, String appe, String diz, double hae, String hiv, int blsg, String blgrp, String sono, int bdpre)
     {
@@ -225,8 +244,6 @@ public class TrimesterDBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = new String[]{COLUMN_ID2, COLUMN_VOM2, COLUMN_NAU2, COLUMN_APPE2, COLUMN_DIZZ2, COLUMN_HAEMO2, COLUMN_BLD_SUG2, COLUMN_SONO2,COLUMN_ABN2,COLUMN_FREQ2, COLUMN_BLD_PR2};
         Cursor c = db.query(TABLE_NAME2, columns, null, null, null, null, null);
-
-
 
         String result[][] = new String[1000][12];
         int i = 0;

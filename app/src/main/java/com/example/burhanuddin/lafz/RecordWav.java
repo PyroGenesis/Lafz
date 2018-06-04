@@ -1,5 +1,6 @@
 package com.example.burhanuddin.lafz;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.AudioFormat;
@@ -13,6 +14,12 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import net.gotev.uploadservice.MultipartUploadRequest;
+import net.gotev.uploadservice.ServerResponse;
+import net.gotev.uploadservice.UploadInfo;
+import net.gotev.uploadservice.UploadNotificationConfig;
+import net.gotev.uploadservice.UploadStatusDelegate;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,11 +45,14 @@ public class RecordWav extends AppCompatActivity {
     private Thread recordingThread = null;
     private boolean isRecording = false;
 
+
+
     RadioGroup typ;
-    Button toFile, goToMain, eng, hin;
+    Button toFile, goToMain, eng, hin,upload;
     int pid,trim,ans,lang=1;
     String type;
     boolean recorded;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +65,7 @@ public class RecordWav extends AppCompatActivity {
         goToMain=(Button)findViewById(R.id.ret);
         typ=(RadioGroup)findViewById(R.id.ty);
         eng = (Button)findViewById(R.id.eng);
+        upload = (Button)findViewById(R.id.uploadAud);
         eng.setVisibility(View.VISIBLE);
         //eng.setBackgroundColor(Color.TRANSPARENT);
         hin = (Button)findViewById(R.id.hin);
@@ -119,6 +130,15 @@ public class RecordWav extends AppCompatActivity {
                 lang=2;
             }
         });
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Hello2", Toast.LENGTH_LONG).show();
+                //doFileUpload();
+                uploadMultipart(getApplicationContext());
+            }
+        });
     }
 
     private void setButtonHandlers() {
@@ -141,7 +161,10 @@ public class RecordWav extends AppCompatActivity {
         if (!file.exists()) {
             file.mkdirs();
         }
-        return (file.getAbsolutePath() + "/P"+pid+"T"+trim+type + AUDIO_RECORDER_FILE_EXT_WAV);
+        //return (file.getAbsolutePath() + "/P"+pid+"T"+trim+type + AUDIO_RECORDER_FILE_EXT_WAV);
+
+        return (file.getAbsolutePath() +"/"+pid + AUDIO_RECORDER_FILE_EXT_WAV);
+
     }
 
     private String getTempFilename() {
@@ -258,7 +281,7 @@ public class RecordWav extends AppCompatActivity {
         long totalAudioLen = 0;
         long totalDataLen = totalAudioLen + 36;
         long longSampleRate = RECORDER_SAMPLERATE;
-        int channels = 2;
+        int channels = 1;
         long byteRate = RECORDER_BPP * RECORDER_SAMPLERATE * channels / 8;
 
         byte[] data = new byte[bufferSizeInBytes];
@@ -365,4 +388,43 @@ public class RecordWav extends AppCompatActivity {
             }
         }
     };
+
+    public void uploadMultipart(final Context context) {
+        try {
+            String FileName = getFilename();
+            Toast.makeText(getApplicationContext(), FileName, Toast.LENGTH_LONG).show();
+            String uploadId =
+                    new MultipartUploadRequest(context, URLs.URL_SEND_AUDIO_FILES)
+                            // starting from 3.1+, you can also use content:// URI string instead of absolute file
+                            .addFileToUpload(FileName, "audio name")
+                            .setNotificationConfig(new UploadNotificationConfig())
+                            .setMaxRetries(2)
+                            .setDelegate(new UploadStatusDelegate() {
+                                @Override
+                                public void onProgress(Context context, UploadInfo uploadInfo) {
+
+                                }
+
+                                @Override
+                                public void onError(Context context, UploadInfo uploadInfo, Exception exception) {
+
+                                }
+
+                                @Override
+                                public void onCompleted(Context context, UploadInfo uploadInfo, ServerResponse serverResponse) {
+                                    Toast.makeText(getApplicationContext(), serverResponse.getBodyAsString(), Toast.LENGTH_LONG).show();
+                                }
+
+                                @Override
+                                public void onCancelled(Context context, UploadInfo uploadInfo) {
+
+                                }
+                            })
+                            .startUpload();
+            // output.setText(uploadId);
+        } catch (Exception exc) {
+            Toast.makeText(getApplicationContext(), "AndroidUploadService" + exc.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+    }
 }

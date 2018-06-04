@@ -9,7 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ActionMenuView;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -255,25 +257,28 @@ public class FileToText extends AppCompatActivity implements RecognitionListener
                 File assetsDir = assets.syncAssets();
                 Config c = Decoder.defaultConfig();
                 if(type.equals("Comments")) {
-                    c.setString("-hmm", new File(assetsDir, "en-us-comm2").getPath());
+                    c.setString("-hmm", new File(assetsDir, "en-us-comm3").getPath());
                     c.setString("-dict", new File(assetsDir, "medicaldict.dic").getPath());
                     //c.setBoolean("-allphone_ci", true);
                     c.setString("-jsgf", new File(assetsDir, "gr.gram").getPath());
-                    //c.setString("-lm", new File(assetsDir, "mentor.lm").getPath());
+                    //c.setString("-lm", new File(assetsDir, "6293.lm").getPath());
                 }
                 if(type.equals("Session"))
                 {
                     if(lang==1)
                     {
-                        c.setString("-hmm", new File(assetsDir, "en-us-eng2").getPath());
-                        c.setString("-dict", new File(assetsDir, "engscript.dic").getPath());
-                        c.setString("-lm", new File(assetsDir, "engscript.lm").getPath());
+//                        c.setString("-hmm", new File(assetsDir, "en-us-eng2").getPath());
+//                        c.setString("-dict", new File(assetsDir, "engscript.dic").getPath());
+//                        c.setString("-lm", new File(assetsDir, "engscript.lm").getPath());
+                          c.setString("-hmm", new File(assetsDir, "50 model").getPath());
+                          c.setString("-dict", new File(assetsDir, "50 model.dic").getPath());
+                          c.setString("-lm", new File(assetsDir, "50 model.lm.DMP").getPath());
                     }
                     else if(lang==2)
                     {
-                        c.setString("-hmm", new File(assetsDir, "en-us-hin2").getPath());
-                        c.setString("-dict", new File(assetsDir, "hindiscript.dic").getPath());
-                        c.setString("-lm", new File(assetsDir, "hindiscript.lm").getPath());
+                        c.setString("-hmm", new File(assetsDir, "enghin").getPath());
+                        c.setString("-dict", new File(assetsDir, "enghin.dic").getPath());
+                        c.setString("-lm", new File(assetsDir, "enghin.lm").getPath());
                     }
                 }
                 Decoder d = new Decoder(c);
@@ -324,9 +329,15 @@ public class FileToText extends AppCompatActivity implements RecognitionListener
             result = result.replaceAll("\\[SPEECH\\] ","");
             result = result.replaceAll("\\[NOISE\\] ","");
             result = result.replaceAll("\\(NULL\\) ","");
-            int height = 780; //your textview height
-            ((TextView)findViewById(R.id.caption_text)).getLayoutParams().height = height;
-            ((TextView)findViewById(R.id.caption_text)).setMovementMethod(new ScrollingMovementMethod());
+//            int height = 780; //your textview height
+            ViewGroup.LayoutParams params = (findViewById(R.id.caption_text)).getLayoutParams();
+            params.height = getResources().getDimensionPixelSize(R.dimen.text_view_height);
+            (findViewById(R.id.caption_text)).setLayoutParams(params);
+//            LayoutParams params = (LayoutParams) textView.getLayoutParams();
+//            params.height = 70;
+//            textView.setLayoutParams(params);
+            //params.height = getResources().getDimensionPixelSize(R.dimen.text_view_height);
+            ((TextView) findViewById(R.id.caption_text)).setMovementMethod(new ScrollingMovementMethod());
             ((TextView) findViewById(R.id.caption_text)).setText("Recognition complete\nResult: " + result);
 
             PassText=result;

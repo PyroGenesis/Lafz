@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="175dp"
-        android:id="@+id/textView4"
+        android:id="@+id/test_val_label"
         />
 
     <TextView
@@ -104,7 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:id="@+id/textview9"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/test_val_label"
         android:layout_alignRight="@+id/ret1"
         android:layout_alignEnd="@+id/ret1" />
 

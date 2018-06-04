@@ -10,6 +10,15 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class PreDef32 extends AppCompatActivity {
 
     TrimesterDBHandler tdb;
@@ -144,6 +153,7 @@ public class PreDef32 extends AppCompatActivity {
                     }
                     tdb.deleteEntry3(pid);
                     tdb.createEntry3(pid,pain,bleed, haemo, bsgr,son,abno, bpre);
+                    sendTrim3Data(String.valueOf(pid),pain,bleed, String.valueOf(haemo), String.valueOf(bsgr),son,abno, String.valueOf(bpre));
                 } catch (Exception e) {
                     didItWork = false;
                     Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -161,5 +171,40 @@ public class PreDef32 extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    public void sendTrim3Data(final String pid,final String pain,final String  bleed,final String haemo, final String bsgr, final String son, final String abno,final String bpr) {
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLs.URL_SEND_TRIM3_INFO,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("pID", pid );
+                params.put("pain", pain);
+                params.put("bleeding", bleed);
+                params.put("haemoglobin", haemo);
+                params.put("bloodSugar", bsgr);
+                params.put("sonography", son);
+                params.put("abnormality",  abno);
+                params.put("bloodPressure", bpr);
+
+                return params;
+            }
+        };
+
+
+        VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
     }
 }

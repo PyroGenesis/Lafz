@@ -15,12 +15,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/icon"
-        android:text="English"
+        android:text="50 model"
         android:textColor="#000000"
         android:layout_alignBaseline="@+id/hin"
         android:layout_alignBottom="@+id/hin"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/imageView"
+        android:layout_toStartOf="@+id/imageView" />
 
     <Button
         android:text="Main menu"
@@ -138,13 +140,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/hin"
-        android:text="Hindi"
+        android:text="English phenome based hindi model"
         android:textColor="#000000"
         android:background="@drawable/icon"
         android:layout_above="@+id/trim"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="56dp" />
+        android:layout_marginBottom="56dp"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
+
+    <Button
+        android:text="Upload Audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:id="@+id/uploadAud"
+        android:layout_above="@+id/toFile"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

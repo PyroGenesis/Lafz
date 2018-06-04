@@ -31,7 +31,13 @@ public class CounsellorDBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //Step 5: Let's just leave this for now
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
+    }
+
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion)
+    {
+        onUpgrade(db, oldVersion, newVersion);
     }
 
     public void register(String name,String pass) {  //Step 9: The insert function
@@ -41,6 +47,13 @@ public class CounsellorDBHandler extends SQLiteOpenHelper {
         cv.put(COLUMN_PASSWORD, pass);
         db.insert(TABLE_NAME, null, cv);                            //insert command
         db.close();                                                 //close db
+    }
+
+    public void truncate()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
     }
 
     public String getData() {                                                                       //Step 11: The read function
